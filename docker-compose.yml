@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  database:
+    image: postgres:latest
+    container_name: database
+    restart: always
+    environment:
+      POSTGRES_DB: first_nest
+      POSTGRES_USER: Urging
+      POSTGRES_PASSWORD: ^ybHUK5MY4HQicB
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - 5432:5432
